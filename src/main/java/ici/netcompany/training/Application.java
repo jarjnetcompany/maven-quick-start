@@ -31,7 +31,7 @@ public class Application {
         }
     }
 
-    private int countWords(String words){
+    public int countWords(String words){
         String[] separateWords = StringUtils.split(words, " ");
         return (separateWords == null) ? 0 : separateWords.length;
     }
