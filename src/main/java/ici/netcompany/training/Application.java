@@ -1,5 +1,7 @@
 package ici.netcompany.training;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +15,9 @@ public class Application {
     	System.out.println ("Starting Application...");
 		Application app = new Application();
 		app.greet();
+
+		int count = app.countWords("I have 4 words!");
+        System.out.println("Word count:" + count);
     }
 
     public void greet(){
@@ -24,5 +29,10 @@ public class Application {
         for (String greeting: greetings){
             System.out.println(greeting);
         }
+    }
+
+    private int countWords(String words){
+        String[] separateWords = StringUtils.split(words, " ");
+        return (separateWords == null) ? 0 : separateWords.length;
     }
 }
